@@ -133,7 +133,7 @@
     <button id="bt-en" onclick="setLang('en')">EN</button>
   </div>
 </div>
-<div class="bluebar" data-i="bluebar">Nossos Associados</div>
+<div class="bluebar" data-i="bluebar">BOOK DE ASSOCIADOS</div>
 
 <header class="hero">
   <div class="eyebrow" data-i="eyebrow">Conheça os nossos</div>
@@ -376,5 +376,5 @@ function render(){const t=I18N[lang];const q=document.getElementById("q").value.
   document.getElementById("grid").innerHTML=h||`<div class="empty">${t.empty}</div>`;
   document.querySelectorAll('.pcard').forEach(c=>{const d=c.querySelector('.desc'),b=c.querySelector('.more');if(d&&b&&d.scrollHeight>d.clientHeight+2)b.style.display='block';});
   document.getElementById("count").textContent=t.count(shown,P.length);}
-buildChips();render();
+setLang(lang);
 </script>
