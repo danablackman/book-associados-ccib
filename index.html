@@ -150,7 +150,7 @@
     <a href="https://indiabrazilchamber.org/oportunidades" data-i="navOport">Oportunidades</a>
     <a href="https://indiabrazilchamber.org/contato/" data-i="navContato">Contato</a>
   </nav>
-  <button class="langlink" id="langlink" onclick="setLang(lang==='pt'?'en':'pt')">Website in English</button>
+  <button class="langlink" id="langlink" onclick="toggleLang()">Website in English</button>
 </div>
 <div class="bluebar">
   <nav class="bluenav" aria-label="Menu secundário">
@@ -380,6 +380,7 @@ function initials(name){const skip=new Set(["&","de","do","da","e","the","of","c
   const parts=name.split(/\s+/).filter(w=>!skip.has(w.toLowerCase()));
   return ((parts[0]||"")[0]+((parts[1]||"")[0]||"")).toUpperCase();}
 function avColor(name){let h=0;for(let i=0;i<name.length;i++)h=(h*31+name.charCodeAt(i))>>>0;return AVCOLORS[h%AVCOLORS.length];}
+function toggleLang(){setLang(lang==="pt"?"en":"pt");}
 function setLang(l){lang=l;var _ll=document.getElementById("langlink");if(_ll)_ll.textContent=l==="pt"?"Website in English":"Website in Portuguese";
   const t=I18N[l];document.querySelectorAll("[data-i]").forEach(el=>{const k=el.getAttribute("data-i");if(t[k])el.innerHTML=t[k];});
   document.getElementById("q").placeholder=t.search;buildChips();render();}
